@@ -2,7 +2,7 @@
 
 TaxClock helps users understand how much of their workday is spent paying taxes.
 
-# License
+## License
 
 TaxClock is licensed under a Creative Commons Attribution 4.0 International License.
 
