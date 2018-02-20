@@ -166,6 +166,28 @@
       'unallocated-reserves': 'This is the contingency reserve - an amount set aside to accommodate changes in the economic environment as well as unforeseeable expenditure'
     }
 
+    // Detailed budget info, links from vulekamali.gov.za
+    var itemVulekamaliLinks = {
+      'national-debt': 'https://vulekamali.gov.za/2017-18/search-result?search_type=full-search&search_string=National+Debt&search=National+Debt',
+      'basic-education': 'https://vulekamali.gov.za/2017-18/national/departments/basic-education',
+      'local-government-and-housing': 'https://vulekamali.gov.za/2017-18/search-result?search_type=full-search&search_string=Local+government+and+housing&search=Local+government+and+housing',
+      'health': 'https://vulekamali.gov.za/2017-18/national/departments/health',
+      'social-grants': 'https://vulekamali.gov.za/2017-18/search-result?search_type=full-search&search_string=Social+grants&search=Social+grants',
+      'police-services': 'https://vulekamali.gov.za/2017-18/national/departments/police',
+      'economic-infrastructure': 'https://vulekamali.gov.za/2017-18/national/departments/economic-development',
+      'general-public-services': 'https://vulekamali.gov.za/2017-18/search-result?search_type=full-search&search_string=General+public+services&search=General+public+services',
+      'employment-labour-affairs': 'https://vulekamali.gov.za/2017-18/search-result?search_type=full-search&search_string=Employment+%26+labour+affairs&search=Employment+%26+labour+affairs',
+      'higher-education-training': 'https://vulekamali.gov.za/2017-18/national/departments/higher-education-and-training',
+      'defence-state-security': 'https://vulekamali.gov.za/2017-18/search-result?search_type=full-search&search_string=Defence+and+state+security&search=Defence+and+state+security',
+      'law-courts-prisons': 'https://vulekamali.gov.za/2017-18/search-result?search_type=full-search&search_string=Law+courts+and+prisons&search=Law+courts+and+prisons',
+      'trade-industry': 'https://vulekamali.gov.za/2017-18/national/departments/trade-and-industry',
+      'agriculture-rural-development-land-reform': 'https://vulekamali.gov.za/2017-18/search-result?search_type=full-search&search_string=Agriculture%2C+rural+development+and+land+reform&search=Agriculture%2C+rural+development+and+land+reform',
+      'science-technology-and-environment': 'https://vulekamali.gov.za/2017-18/search-result?search_type=full-search&search_string=Science+and+Technology+and+environment&search=Science+and+Technology+and+environment',
+      'home-affairs': 'https://vulekamali.gov.za/2017-18/national/departments/home-affairs',
+      'arts-sports-recreation-and-culture': 'https://vulekamali.gov.za/2017-18/search-result?search_type=full-search&search_string=Arts%2C+sports%2C+recreation+and+culture&search=Arts%2C+sports%2C+recreation+and+culture',
+      'unallocated-reserves': 'https://vulekamali.gov.za/2017-18/search-result?search_type=full-search&search_string=Unallocated+reserves&search=Unallocated+reserves'
+    }
+
     var cal = null;
 
     function Slugify(str) {
@@ -412,19 +434,20 @@
             firstLoop = false;
           }
 
-          // Add explanations
+          // Add explanations and Vulekamali links
           $('.planner-item').each(function(){
             var itemID = $(this).attr('id');
             var explanation = itemExplanations[itemID];
+            var vulekamali = itemVulekamaliLinks[itemID];
 
             var itemHeight = parseInt($(this).css('min-height'));
 
             if (itemID != 'working-for-yourself'){
               if (itemHeight > 80) {
-              $(this).find('.item-details').append('<div class="item-explanation"><span class="what-is-this">?</span> ' + explanation + '</div>');
+              $(this).find('.item-details').append('<div class="item-explanation"><span class="what-is-this">?</span> ' + explanation + '</div><div class="vulekamali-link"><a target="_blank" href="' + vulekamali + '">Detailed information</a>');
               }
               else {
-                $(this).find('.item-name').append('<span class="explanation-icon" data-toggle="tooltip" title="'+ explanation +'">?</span>');
+                $(this).find('.item-name').append('<span class="explanation-icon" data-toggle="tooltip" title="'+ explanation +'">?</span><span class="vulekamali-icon"><a target="_blank" href="' + vulekamali + '">ℹ</a></span>');
               }
             }
 

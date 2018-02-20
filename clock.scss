@@ -380,6 +380,44 @@ body:hover .embed-link.allowed {
 	line-height: 1.2;
 }
 
+.vulekamali-link {
+	margin-top: 10px;
+	font-size: 11px;
+	font-family: $font-family-sans-serif;
+	a {
+		color: $black;
+		padding: 2px;
+		border: solid 2px $yellow;
+		&:hover {
+			color: $black;
+			text-decoration: none;
+			background-color: $yellow;
+		}
+	}
+}
+
+.vulekamali-icon {
+	display: inline-block;
+	background-color: $yellow;
+	font-size: 14px;
+	width: 20px;
+	height: 20px;
+	margin-left: 5px;
+	line-height: 16px;
+	text-align: center;
+	border-radius: 9px;
+	border: solid 2px transparent;
+	cursor: default;
+	&:hover {
+		background-color: transparent;
+		border: solid 2px $yellow;
+	}
+	a, a:hover {
+		color: $black;
+		text-decoration: none;
+	}
+}
+
 #calendar-download {
 	padding-top: 10px;
 	font-size: 12px;
