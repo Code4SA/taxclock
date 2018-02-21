@@ -88,7 +88,7 @@
         <div class="col-md-6 col-md-offset-3">
           <div id="difference-wrapper">
             <div id="difference">
-              <h4 id="did-you-know-wrapper"><span id="did-you-know">Did you know?</span> You are paying <span id="amount-wrapper">R<span id="amount">1240</span> more</span> in taxes than last year</h3>
+              <h4 id="did-you-know-wrapper"><span id="did-you-know">Did you know?</span> You are paying <span id="amount-wrapper">R<span id="amount">1240</span> more</span> in taxes than last year. You are also working <span id="amount-wrapper"><span id="tax-minutes-change">x</span> more</span> minutes than in 2017.</h3>
               <h5 id="scroll-down">Scroll down for a detailed breakdown of your day</h5>
             </div>
           </div>
@@ -299,7 +299,20 @@
       $('.income').on('change keyup', function() {
         var income = parseFloat($(this).val());
         var calc = new IncomeCalculator(taxes_2017);
+        var calc_2018 = calc;
+        var calc_2017 = new IncomeCalculator(taxes_2017);
+        var tax_change = calc_2018.personalTax - calc_2017.personalTax;
         var output = calc.calculateIncomeBreakdown(income);
+        var output_2018 = output;
+        var output_2017 = calc_2017.calculateIncomeBreakdown(income);
+
+        var tax_change = output_2018.personalTax - output_2017.personalTax;
+        var formatted_tax_change = tax_change.toFixed().replace(/(\d)(?=(\d{3})+(,|$))/g, '$1,')
+        var minutes_change = output_2018.taxman_minutes - output_2017.taxman_minutes;
+
+        $("#amount").text(formatted_tax_change);
+        $("#tax-minutes-change").text(minutes_change.toFixed(0));
+
         cal = createICS(output.breakdown);
         var startTime = calc.START_OF_DAY;
 
