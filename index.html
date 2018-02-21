@@ -282,6 +282,7 @@
       $('.income').on('change keyup', function() {
         var income = parseFloat($(this).val());
         var calc = new IncomeCalculator(taxes_2017);
+        var output = calc.calculateIncomeBreakdown(income);
         cal = createICS(output.breakdown);
         var startTime = calc.START_OF_DAY;
 
