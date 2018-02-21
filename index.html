@@ -491,10 +491,12 @@
 
             if (itemID != 'working-for-yourself'){
               if (itemHeight > 80) {
-              $(this).find('.item-details').append('<div class="item-explanation"><span class="what-is-this">?</span> ' + explanation + '</div>');
+                  $(this).find('.item-details').append('<div class="item-explanation">' + explanation + '</div>');
               }
               else {
-                $(this).find('.item-name').append('<span class="explanation-icon" data-toggle="tooltip" title="'+ explanation +'">?</span>');
+                if (explanation.length > 0) {
+                    $(this).find('.item-name').append('<span class="explanation-icon" data-toggle="tooltip" title="'+ explanation +'">?</span>');
+                }
               }
             }
 
