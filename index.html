@@ -460,13 +460,9 @@
               }
             }
 
-            if (itemID !== 'working-for-yourself' && itemID !== 'national-debt' && itemID !== 'unallocated-reserves'){
-              if (itemHeight > 80) {
+            if (itemID !== 'working-for-yourself' && itemID !== 'national-debt' && itemID !== 'unallocated-reserves')
+            {
               $(this).append('<a class="vulekamali-link" target="_blank" href="' + vulekamali + '">Explore spending details</a>');
-              }
-              else {
-                $(this).find('.item-name').append('<a class="vulekamali-icon" target="_blank" href="' + vulekamali + '">ℹ</a></span>');
-              }
             }
 
             // Activate tooltips
