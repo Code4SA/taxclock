@@ -34,7 +34,7 @@
     <div class="row">
       <div class="col-md-6 col-md-offset-3">
         <div class="fb-share-button" data-href="http://code4sa.org/taxclock" data-layout="button_count"></div> 
-        <a href="https://twitter.com/share" class="twitter-share-button" data-url="http://www.code4sa.org/taxclock" data-via="code4sa" data-hashtags="taxclock2018">Tweet</a>
+        <a href="https://twitter.com/share" class="twitter-share-button" data-url="http://www.taxclock.co.za" data-via="OpenUpSA" data-hashtags="taxclock2018">Tweet</a>
       </div>
     </div>
   </div>
@@ -281,8 +281,7 @@
       checkEmbedLink();
       $('.income').on('change keyup', function() {
         var income = parseFloat($(this).val());
-        var calc = new IncomeCalculator();
-        output = calc.calculateIncomeBreakdown(income);
+        var calc = new IncomeCalculator(taxes_2017);
         cal = createICS(output.breakdown);
         var startTime = calc.START_OF_DAY;
 

@@ -1,60 +1,25 @@
-var IncomeCalculator = function() {
+
+var IncomeCalculator = function(data) {
   var self = this;
 
-  this.VAT = 0.14;
+  this.VAT = data.vat;
 
-  function TaxBand(marginalRate, baseAmount, threshold, limit) {
-    this.marginalRate = marginalRate;
-    this.baseAmount = baseAmount;
-    this.threshold = threshold;
-    this.limit = (arguments.length > 3) ? this.limit = limit : this.limit = Number.POSITIVE_INFINITY;
-  }
-
-  // tax bands -- with thanks to http://www.oldmutual.co.za/markets/south-african-budget/income-tax-calculator
-  this.TAX_TABLE = [
-    new TaxBand(0.18, 0, 0, 189880),
-    new TaxBand(0.26, 34178, 189881, 296540),
-    new TaxBand(0.31, 61910, 296541, 410460),
-    new TaxBand(0.36, 97225, 410461, 555600),
-    new TaxBand(0.39, 149475, 555601, 708310),
-    new TaxBand(0.41, 209032, 708311, 1500000),
-    new TaxBand(0.45, 533625, 1500001)
-  ];
-
-  this.PRIMARY_REBATE = 13635;
+  this.TAX_TABLE = data.tax_table;
+  this.PRIMARY_REBATE = data.primary_rebate;
 
   // Budget revenue streams from individuals (billions)
   // http://www.treasury.gov.za/documents/national%20budget/2017/review/FullBR.pdf (page 4)
-  this.PERSONAL_INCOME_TAX_REVENUE = 482.1;
-  this.VAT_REVENUE = 312.8;
+  this.PERSONAL_INCOME_TAX_REVENUE = data.personal_income_tax_revenue;
+  this.VAT_REVENUE = data.vat_revenue;
 
   // Budget expenditure by category, in millions
   // see https://docs.google.com/spreadsheets/d/18pS6-GXmV2AE6TqKtYYzL6Ag-ZuwiE4jb53U9heWF1M/edit#gid=0
 
   // Categorised expenditure (should, but doesn't have to, total to CONSOLIDATED_EXPENDITURE)
-  this.EXPENDITURE = {
-    'Basic education': 232600,
-    'Higher education & training': 77500,
-    'Health': 187500,
-    'Social grants': 180000,
-    'Employment & labour affairs': 75900,
-    'Trade & industry': 28900,
-    'Economic infrastructure': 89500,
-    'Defence & state security': 54000,
-    'Law courts & prisons': 43800,
-    'Police services': 93800,
-    'Home affairs': 7200,
-    'Local government and housing': 195800,
-    'Agriculture, rural development & land reform': 26500,
-    'Science & Technology and environment': 20600,
-    'Arts, sports, recreation and culture': 10400,
-    'General public services': 70700,
-    'National debt': 162400,
-    'Unallocated reserves': 6000,
-  };
+  this.EXPENDITURE = data.expenditure;
 
   // override ordering
-  this.ORDERING = {
+  this.ORDERING = data.ordering || {
     'Working for yourself': 9999,
     'National debt': -1,
   };
@@ -178,3 +143,48 @@ var IncomeCalculator = function() {
     });
   };
 };
+
+function TaxBand(marginalRate, baseAmount, threshold, limit) {
+    this.marginalRate = marginalRate;
+    this.baseAmount = baseAmount;
+    this.threshold = threshold;
+    this.limit = (arguments.length > 3) ? this.limit = limit : this.limit = Number.POSITIVE_INFINITY;
+}
+
+
+var taxes_2017 = {
+// tax bands -- with thanks to http://www.oldmutual.co.za/markets/south-african-budget/income-tax-calculator
+    tax_table : [
+        new TaxBand(0.18, 0, 0, 189880),
+        new TaxBand(0.26, 34178, 189881, 296540),
+        new TaxBand(0.31, 61910, 296541, 410460),
+        new TaxBand(0.36, 97225, 410461, 555600),
+        new TaxBand(0.39, 149475, 555601, 708310),
+        new TaxBand(0.41, 209032, 708311, 1500000),
+        new TaxBand(0.45, 533625, 1500001)
+    ],
+    primary_rebate : 13635,
+    personal_income_tax_revenue : 482.1,
+    vat_revenue : 312.8,
+    expenditure : {
+        'Basic education': 232600,
+        'Higher education & training': 77500,
+        'Health': 187500,
+        'Social grants': 180000,
+        'Employment & labour affairs': 75900,
+        'Trade & industry': 28900,
+        'Economic infrastructure': 89500,
+        'Defence & state security': 54000,
+        'Law courts & prisons': 43800,
+        'Police services': 93800,
+        'Home affairs': 7200,
+        'Local government and housing': 195800,
+        'Agriculture, rural development & land reform': 26500,
+        'Science & Technology and environment': 20600,
+        'Arts, sports, recreation and culture': 10400,
+        'General public services': 70700,
+        'National debt': 162400,
+        'Unallocated reserves': 6000,
+    },
+    vat : 0.14
+}
