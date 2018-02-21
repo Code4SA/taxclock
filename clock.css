@@ -6114,3 +6114,71 @@ body.standalone #social-media {
     margin: 5px;
     background-color: #fff;
     border-radius: 5px; }
+
+#difference-wrapper {
+  display: none;
+  background-image: url("bg-linedpaper.png");
+  background-color: #fff;
+  background-color: rgba(255, 255, 255, 0.9);
+  padding: 10px;
+  margin-bottom: 20px;
+  text-align: center; }
+  #difference-wrapper #difference {
+    border: solid 1px #088;
+    padding: 15px; }
+    #difference-wrapper #difference #did-you-know-wrapper {
+      font-size: 19px; }
+      #difference-wrapper #difference #did-you-know-wrapper #did-you-know {
+        font-family: "Bitter", serif;
+        font-weight: bold;
+        font-size: 17px;
+        text-transform: uppercase;
+        color: #887300;
+        display: block;
+        text-align: center;
+        margin-bottom: 20px; }
+    #difference-wrapper #difference #amount-wrapper {
+      font-family: "Bitter", serif;
+      font-weight: bold;
+      color: #088;
+      text-transform: uppercase; }
+    #difference-wrapper #difference #scroll-down {
+      margin-top: 20px;
+      font-weight: bold; }
+
+.vulekamali-link {
+  font-size: 11px;
+  font-family: "Montserrat", Helvetica, Arial, sans-serif;
+  position: absolute;
+  right: 0;
+  bottom: 0;
+  padding: 4px;
+  color: #000;
+  border-top: solid 1px #777777;
+  border-left: solid 1px #777777; }
+  .vulekamali-link:hover {
+    color: #000;
+    text-decoration: none;
+    background-color: #fcdc23; }
+
+.vulekamali-icon {
+  display: inline-block;
+  background-color: #fcdc23;
+  font-size: 14px;
+  width: 20px;
+  height: 20px;
+  margin-left: 5px;
+  line-height: 16px;
+  text-align: center;
+  border-radius: 9px;
+  border: solid 2px transparent;
+  cursor: default;
+  color: #000;
+  z-index: 10000;
+  text-decoration: none; }
+  .vulekamali-icon:hover {
+    text-decoration: none;
+    background-color: transparent;
+    border: solid 2px #fcdc23;
+    cursor: pointer;
+    color: #000; }

@@ -78,6 +78,16 @@
       </div>
       <div class="row">
         <div class="col-md-6 col-md-offset-3">
+          <div id="difference-wrapper">
+            <div id="difference">
+              <h4 id="did-you-know-wrapper"><span id="did-you-know">Did you know?</span> You are paying <span id="amount-wrapper">R<span id="amount">1240</span> more</span> in taxes than last year</h3>
+              <h5 id="scroll-down">Scroll down for a detailed breakdown of your day</h5>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-md-6 col-md-offset-3">
           <div id="output-wrapper">
             <div id="clock">
               <div id="output-clock">
@@ -168,13 +178,12 @@
 
     // Detailed budget info, links from vulekamali.gov.za
     var itemVulekamaliLinks = {
-      'national-debt': 'https://vulekamali.gov.za/2017-18/search-result?search_type=full-search&search_string=National+Debt&search=National+Debt',
       'basic-education': 'https://vulekamali.gov.za/2017-18/national/departments/basic-education',
       'local-government-and-housing': 'https://vulekamali.gov.za/2017-18/search-result?search_type=full-search&search_string=Local+government+and+housing&search=Local+government+and+housing',
       'health': 'https://vulekamali.gov.za/2017-18/national/departments/health',
       'social-grants': 'https://vulekamali.gov.za/2017-18/search-result?search_type=full-search&search_string=Social+grants&search=Social+grants',
       'police-services': 'https://vulekamali.gov.za/2017-18/national/departments/police',
-      'economic-infrastructure': 'https://vulekamali.gov.za/2017-18/national/departments/economic-development',
+      'economic-infrastructure': 'https://vulekamali.gov.za/2017-18/search-result?search_type=full-search&search_string=Economic+infrastructure&search=Economic+infrastructure',
       'general-public-services': 'https://vulekamali.gov.za/2017-18/search-result?search_type=full-search&search_string=General+public+services&search=General+public+services',
       'employment-labour-affairs': 'https://vulekamali.gov.za/2017-18/search-result?search_type=full-search&search_string=Employment+%26+labour+affairs&search=Employment+%26+labour+affairs',
       'higher-education-training': 'https://vulekamali.gov.za/2017-18/national/departments/higher-education-and-training',
@@ -444,10 +453,19 @@
 
             if (itemID != 'working-for-yourself'){
               if (itemHeight > 80) {
-              $(this).find('.item-details').append('<div class="item-explanation"><span class="what-is-this">?</span> ' + explanation + '</div><div class="vulekamali-link"><a target="_blank" href="' + vulekamali + '">Detailed information</a>');
+              $(this).find('.item-details').append('<div class="item-explanation"><span class="what-is-this">?</span> ' + explanation + '</div>');
               }
               else {
-                $(this).find('.item-name').append('<span class="explanation-icon" data-toggle="tooltip" title="'+ explanation +'">?</span><span class="vulekamali-icon"><a target="_blank" href="' + vulekamali + '">ℹ</a></span>');
+                $(this).find('.item-name').append('<span class="explanation-icon" data-toggle="tooltip" title="'+ explanation +'">?</span>');
+              }
+            }
+
+            if (itemID !== 'working-for-yourself' && itemID !== 'national-debt' && itemID !== 'unallocated-reserves'){
+              if (itemHeight > 80) {
+              $(this).append('<a class="vulekamali-link" target="_blank" href="' + vulekamali + '">Explore spending details</a>');
+              }
+              else {
+                $(this).find('.item-name').append('<a class="vulekamali-icon" target="_blank" href="' + vulekamali + '">ℹ</a></span>');
               }
             }
 
@@ -457,6 +475,8 @@
           });
 
           /* Show the output */
+          $('#difference-wrapper').show();
+
           $('#output-wrapper').show();
           ga('send', 'event', 'taxclock', 'salary', $(this).val());
 
