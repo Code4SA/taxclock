@@ -174,6 +174,45 @@ body:hover .embed-link.allowed {
 	}
 }
 
+//== Difference
+#difference-wrapper {
+	display: none;
+	background-image: url("bg-linedpaper.png");
+	background-color: $white;
+	background-color: rgba(255,255,255,0.9);
+	padding: 10px;
+	margin-bottom: 20px;
+	text-align: center;
+	#difference {
+		border: solid 1px #088;
+		padding: 15px;
+		#did-you-know-wrapper {
+		  font-size: 19px;
+			#did-you-know {
+				font-family: $font-family-serif;
+				font-weight: bold;
+				font-size: 17px;
+				text-transform: uppercase;
+				color: $gold-dark;
+				display: block;
+				text-align: center;
+			  margin-bottom: 20px;
+			}
+		}
+		#amount-wrapper {
+			font-family: $font-family-serif;
+			font-weight: bold;
+			color: $teal;
+			text-transform: uppercase;
+		}
+		#scroll-down {
+			margin-top: 20px;	
+		  font-weight: bold;
+		}
+	}
+}
+
+
 //== Output
 
 #output-wrapper {
@@ -381,18 +420,19 @@ body:hover .embed-link.allowed {
 }
 
 .vulekamali-link {
-	margin-top: 10px;
 	font-size: 11px;
 	font-family: $font-family-sans-serif;
-	a {
+	position: absolute;
+	right: 0;
+	bottom: 0;
+	padding: 4px;
+	color: $black;
+	border-top: solid 1px $gray-light;
+	border-left: solid 1px $gray-light;
+	&:hover {
 		color: $black;
-		padding: 2px;
-		border: solid 2px $yellow;
-		&:hover {
-			color: $black;
-			text-decoration: none;
-			background-color: $yellow;
-		}
+		text-decoration: none;
+		background-color: $yellow;
 	}
 }
 
@@ -408,13 +448,15 @@ body:hover .embed-link.allowed {
 	border-radius: 9px;
 	border: solid 2px transparent;
 	cursor: default;
+	color: $black;
+	text-decoration: none;
+  z-index: 10000;
 	&:hover {
+		text-decoration: none;
 		background-color: transparent;
 		border: solid 2px $yellow;
-	}
-	a, a:hover {
+		cursor: pointer;
 		color: $black;
-		text-decoration: none;
 	}
 }
 
