@@ -192,15 +192,15 @@ var taxes_2017 = {
 var taxes_2018 = {
 // tax bands -- with thanks to http://www.oldmutual.co.za/markets/south-african-budget/income-tax-calculator
     tax_table : [
-        new TaxBand(0.18, 0, 0, 189880),
-        new TaxBand(0.26, 34178, 189881, 296540),
-        new TaxBand(0.31, 61910, 296541, 410460),
-        new TaxBand(0.36, 97225, 410461, 555600),
-        new TaxBand(0.39, 149475, 555601, 708310),
-        new TaxBand(0.41, 209032, 708311, 1500000),
-        new TaxBand(0.45, 533625, 1500001)
+        new TaxBand(0.18, 0, 0, 195850),
+        new TaxBand(0.26, 35253, 195851, 305850),
+        new TaxBand(0.31, 63853, 305851, 423300),
+        new TaxBand(0.36, 100263, 423301, 555600),
+        new TaxBand(0.39, 147891, 555601, 708310),
+        new TaxBand(0.41, 207448, 708311, 1500000),
+        new TaxBand(0.45, 532041, 1500000)
     ],
-    primary_rebate : 13635,
+    primary_rebate : 14067,
     personal_income_tax_revenue : 482.1,
     vat_revenue : 312.8,
     expenditure : {
