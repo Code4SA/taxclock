@@ -325,6 +325,7 @@ body:hover .embed-link.allowed {
 	background-color: $white;
 	border-bottom: solid 1px $gray-light;
 	padding: 10px;
+	padding-bottom: 20px;
 	.item-starttime-wrapper {
 		position: absolute;
 		left: 7px;
@@ -439,8 +440,6 @@ body:hover .embed-link.allowed {
 	bottom: 0;
 	padding: 4px;
 	color: $black;
-	border-top: solid 1px $gray-light;
-	border-left: solid 1px $gray-light;
 	&:hover {
 		color: $black;
 		text-decoration: none;
