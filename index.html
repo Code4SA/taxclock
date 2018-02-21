@@ -88,7 +88,7 @@
         <div class="col-md-6 col-md-offset-3">
           <div id="difference-wrapper">
             <div id="difference">
-              <h4 id="did-you-know-wrapper"><span id="did-you-know">Did you know?</span> You are paying <span id="amount-wrapper">R<span id="amount">1240</span> more</span> in taxes than last year. You are also working <span id="amount-wrapper"><span id="tax-minutes-change">x</span> more</span> minutes than in 2017. In 2018, you start earning for yourself at <span id="amount-wrapper"><span id="personal-time"></span></span>.</h3>
+              <h4 id="did-you-know-wrapper"><span id="did-you-know">Did you know?</span> You are paying <span id="amount-wrapper">R<span id="amount">1240</span> more</span> in taxes than last year. You are also working <span id="amount-wrapper"><span id="tax-minutes-change">x</span> more</span> minute(s) than in 2017. In 2018, you start earning for yourself at <span id="amount-wrapper"><span id="personal-time"></span></span>.</h3>
               <h5 id="scroll-down">Scroll down for a detailed breakdown of your day</h5>
             </div>
           </div>
@@ -164,7 +164,17 @@
 
     // Explanations for items
     var itemExplanations = {
-      'national-debt': 'This is the tax revenue allocated to servicing South Africa\'s national debt. It is also the fastest growing item of expenditure in the 2018 budget.',
+      'debt-service-costs': 'This is the tax revenue allocated to servicing South Africa\'s national debt. It is also, along with post-school education and training, the fastest growing item of expenditure in the 2018 budget.',
+      'community-development': 'Community development includes public transport infrastructure and funds for the provision of water, sanitation and electricity.',
+      'social-protection': 'This function provides social security and a safety net for low-income South Africans. It also improves social welfare service delivery to vulnerable individuals.',
+      'economic-regulation-and-infrastructure': 'This includes water and road infrastructure.',
+      'post-school-education-and-training': 'This includes university subsidies, NSFAS, technical and vocational training, and community education. This along with debt servicing costs is the fastest growing item of expenditure in the 2018 budget.',
+      'social-security-funds': '',
+      'public-administration-and-fiscal-affairs': '',
+      'industrialisation-and-exports': 'Including economic development and incentive programmes.',
+      'agriculture-and-rural-development': 'This includes land reform, land restitution and farmer support.',
+      'job-creation-and-labour-affairs': 'Expanded Public Works Programme, Community Works Programme and the Jobs Fund.',
+      'executive-and-legislative-organs': '',
       'basic-education': 'This department develops, maintains and supports the South African school education system.',
       'local-government-and-housing': 'This department works to facilitate the creation of sustainable human settlements and the improvement to household quality of life.',
       'health': 'This department provides leadership and coordination of health services to promote the health of all people in South Africa.',
@@ -181,7 +191,9 @@
       'science-technology-and-environment': 'This category focuses on realising the full potential of science and technology in social and economic development, and leads South Africa\'s environmental sector to achieve sustainable development.',
       'home-affairs': 'Birth certificates, marriage certificates, ID books, passports, etc',
       'arts-sports-recreation-and-culture': 'This category is for creating an enabling environment in which the arts, culture and sport can play a significant role in nation building and socio-economic development',
-      'unallocated-reserves': 'This is the contingency reserve - an amount set aside to accommodate changes in the economic environment as well as unforeseeable expenditure'
+      'contingency-reserve': 'This is the contingency reserve - an amount set aside to accommodate changes in the economic environment as well as unforeseeable expenditure',
+      'external-affairs': '',
+      'payments-for-financial-assets': ''
     }
 
     // Detailed budget info, links from vulekamali.gov.za
@@ -488,7 +500,9 @@
 
             if (itemID !== 'working-for-yourself' && itemID !== 'national-debt' && itemID !== 'unallocated-reserves')
             {
+                /*
               $(this).append('<a class="vulekamali-link" target="_blank" href="' + vulekamali + '">Click for more information</a>');
+              */
             }
 
             // Activate tooltips

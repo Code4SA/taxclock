@@ -5914,8 +5914,7 @@ body:hover .embed-link.allowed {
     #difference-wrapper #difference #amount-wrapper {
       font-family: "Bitter", serif;
       font-weight: bold;
-      color: #088;
-      text-transform: uppercase; }
+      color: #088; }
     #difference-wrapper #difference #scroll-down {
       margin-top: 20px;
       font-weight: bold; }
