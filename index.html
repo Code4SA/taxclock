@@ -88,7 +88,7 @@
         <div class="col-md-6 col-md-offset-3">
           <div id="difference-wrapper">
             <div id="difference">
-              <h4 id="did-you-know-wrapper"><span id="did-you-know">Did you know?</span> You are paying <span id="amount-wrapper">R<span id="amount">1240</span> more</span> in taxes than last year. You are also working <span id="amount-wrapper"><span id="tax-minutes-change">x</span> more</span> minutes than in 2017.</h3>
+              <h4 id="did-you-know-wrapper"><span id="did-you-know">Did you know?</span> You are paying <span id="amount-wrapper">R<span id="amount">1240</span> more</span> in taxes than last year. You are also working <span id="amount-wrapper"><span id="tax-minutes-change">x</span> more</span> minutes than in 2017. In 2018, you start earning for yourself at <span id="amount-wrapper"><span id="personal-time"></span></span>.</h3>
               <h5 id="scroll-down">Scroll down for a detailed breakdown of your day</h5>
             </div>
           </div>
@@ -310,8 +310,12 @@
         var formatted_tax_change = tax_change.toFixed().replace(/(\d)(?=(\d{3})+(,|$))/g, '$1,')
         var minutes_change = output_2018.taxman_minutes - output_2017.taxman_minutes;
 
+        var time = START_OF_DAY.clone().add(output_2018.taxman_minutes, 'm');
+        var finish_time = time.format('h:mm a');
+
         $("#amount").text(formatted_tax_change);
         $("#tax-minutes-change").text(minutes_change.toFixed(0));
+        $("#personal-time").text(finish_time);
 
         cal = createICS(output.breakdown);
         var startTime = calc.START_OF_DAY;

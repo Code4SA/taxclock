@@ -1,4 +1,4 @@
-
+var START_OF_DAY = moment().hour(9).minute(0).second(0);
 var IncomeCalculator = function(data) {
   var self = this;
 
@@ -32,7 +32,7 @@ var IncomeCalculator = function(data) {
   this.TAXPAYER_RATIO = (this.PERSONAL_INCOME_TAX_REVENUE + this.VAT_REVENUE) / this.CONSOLIDATED_EXPENDITURE;
 
   // start of day as a moment.js object. The date is irrelevant.
-  this.START_OF_DAY = moment().hour(9).minute(0).second(0);
+  this.START_OF_DAY = START_OF_DAY;
 
   this.WORKDAY_HOURS = 8;
   this.WORKDAY_MINS = this.WORKDAY_HOURS * 60;
