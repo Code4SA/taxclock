@@ -4287,16 +4287,16 @@ a.badge:hover, a.badge:focus {
   cursor: pointer; }
 
 .jumbotron {
-  padding-top: 40px;
-  padding-bottom: 40px;
-  margin-bottom: 40px;
+  padding-top: 0px;
+  padding-bottom: 0px;
+  margin-bottom: 0px;
   color: inherit;
   background-color: #088; }
   .jumbotron h1,
   .jumbotron .h1 {
     color: inherit; }
   .jumbotron p {
-    margin-bottom: 20px;
+    margin-bottom: 0px;
     font-size: 24px;
     font-weight: 200; }
   .jumbotron > hr {
@@ -4309,11 +4309,11 @@ a.badge:hover, a.badge:focus {
     max-width: 100%; }
   @media screen and (min-width: 768px) {
     .jumbotron {
-      padding-top: 64px;
-      padding-bottom: 64px; }
+      padding-top: 0px;
+      padding-bottom: 0px; }
       .container .jumbotron, .container-fluid .jumbotron {
-        padding-left: 80px;
-        padding-right: 80px; }
+        padding-left: 0px;
+        padding-right: 0px; }
       .jumbotron h1,
       .jumbotron .h1 {
         font-size: 72px; } }
@@ -5831,20 +5831,19 @@ body:hover .embed-link.allowed {
   padding-top: 0;
   padding-bottom: 0; }
   .jumbotron .container {
-    background-image: url("gold-clock.png");
     background-repeat: no-repeat;
     background-position: 50% 65%;
-    padding-top: 40px;
-    padding-bottom: 40px; }
+    padding-top: 0px;
+    padding-bottom: 0px; }
   .jumbotron h1 {
     color: #fff;
-    font-size: 80px;
+    font-size: 60px;
     font-weight: bold;
     text-transform: uppercase;
     margin: 0; }
   .jumbotron h2 {
     color: #EEC900;
-    font-size: 34px;
+    font-size: 25px;
     font-weight: bold;
     text-transform: uppercase;
     margin-top: 0; }

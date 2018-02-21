@@ -57,7 +57,7 @@ $btn-default-border: #ccc !default;
 
 //== Jumbotron
 $jumbotron-bg: $teal !default;
-$jumbotron-padding: 40px !default;
+$jumbotron-padding: 0px !default;
 
 //== Tooltips
 
@@ -112,7 +112,7 @@ body:hover .embed-link.allowed {
 	padding-top: 0;
 	padding-bottom: 0;
 	.container {
-		background-image: url('gold-clock.png');
+		//background-image: url('gold-clock.png');
 		background-repeat: no-repeat;
 		background-position: 50% 65%;
 		padding-top: $jumbotron-padding;
@@ -120,14 +120,14 @@ body:hover .embed-link.allowed {
 	}
 	h1 {
 		color: $white;
-		font-size: 80px;
+		font-size: 60px;
 		font-weight: bold;
 		text-transform: uppercase;
 		margin: 0;
 	}
 	h2 {
 		color: $gold;
-		font-size: 34px;
+		font-size: 25px;
 		font-weight: bold;
 		text-transform: uppercase;
 		margin-top: 0;
