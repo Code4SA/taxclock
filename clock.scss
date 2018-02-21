@@ -157,21 +157,33 @@ body:hover .embed-link.allowed {
 }
 
 #input {
-	border: solid 3px $teal;
-	padding: 15px;
-	h4 {
-		text-align: left;
-		font-size: 18px;
-		letter-spacing: 1px;
-		margin-top: 0;
-		line-height: 1.4;
-		i {
-			color: $gold-dark;
-		}
-	}
-	.icon {
-		text-align: center;
-	}
+  border: solid 3px $teal;
+  padding: 15px;
+  h4 {
+    text-align: left;
+    font-size: 18px;
+    letter-spacing: 1px;
+    margin-top: 0;
+    line-height: 1.4;
+    i {
+      color: $gold-dark;
+    }
+  }
+  .icon {
+    text-align: center;
+  }
+  .form-control.income {
+    width: 75%;
+  }
+  .btn-submit {
+    width: 20%;
+    height: 49px;
+    border-radius: 0;
+    border-bottom-right-radius: 6px;
+    border-top-right-radius: 6px;
+    border: none;
+    line-height: 29px;
+  }
 }
 
 //== Difference

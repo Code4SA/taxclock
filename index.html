@@ -63,12 +63,20 @@
                     <img src="icon-income.png" class="img-responsive">
                   </div>
                   <div class="col-sm-8 col-xs-12">
-                  <h4>What is your <strong>annual income*</strong> (before tax)?</h4>
-                    <div class="input-group input-group-lg">
-                      <span class="input-group-addon">R</span>
-                      <input class="income form-control" type="text" name="income"  aria-label="Annual income before tax">
-                    </div>
-                  <h6>* This should be your income <i>before</i> tax but <i>after</i> deductions such as pension and medical aid.</h6>
+                    <h4>What is your <strong>annual income*</strong> (before tax)?</h4>
+                      <div class="input-group input-group-lg">
+                        <span class="input-group-addon">R</span>
+                        <input class="income form-control" type="text" name="income"  aria-label="Annual income before tax">
+                        <script>
+                          function scrollToOutput(){
+                            $('html,body').animate({
+                                   scrollTop: $("#output-wrapper").offset().top},
+                                   'slow');
+                          }
+                        </script>
+                        <a class="btn btn-default btn-submit" onclick="scrollToOutput()">⮞</a>
+                      </div>
+                    <h6>* This should be your income <i>before</i> tax but <i>after</i> deductions such as pension and medical aid.</h6>
                   </div>
                 </div>
               </div>
@@ -493,6 +501,12 @@
       /* Stupid hack to probably fix size once probably rendered initially */
       setInterval(function() { pymChild.sendHeight(); }, 1000);
     })
+
+    $(document).keypress(function(e) {
+      if(e.which == 13) {
+        scrollToOutput();
+      }
+    });
   </script>
 
   <!-- Google Analytics -->

@@ -6182,3 +6182,17 @@ body.standalone #social-media {
     border: solid 2px #fcdc23;
     cursor: pointer;
     color: #000; }
+
+.form-control.income {
+  width: 75%;
+}
+.btn-submit {
+  width: 20%;
+  height: 49px;
+  padding: 10px;
+  border: none;
+  border-radius: 0;
+  border-bottom-right-radius: 6px;
+  border-top-right-radius: 6px;
+  line-height: 29px;
+}
