@@ -188,3 +188,40 @@ var taxes_2017 = {
     },
     vat : 0.14
 }
+
+var taxes_2018 = {
+// tax bands -- with thanks to http://www.oldmutual.co.za/markets/south-african-budget/income-tax-calculator
+    tax_table : [
+        new TaxBand(0.18, 0, 0, 189880),
+        new TaxBand(0.26, 34178, 189881, 296540),
+        new TaxBand(0.31, 61910, 296541, 410460),
+        new TaxBand(0.36, 97225, 410461, 555600),
+        new TaxBand(0.39, 149475, 555601, 708310),
+        new TaxBand(0.41, 209032, 708311, 1500000),
+        new TaxBand(0.45, 533625, 1500001)
+    ],
+    primary_rebate : 13635,
+    personal_income_tax_revenue : 482.1,
+    vat_revenue : 312.8,
+    expenditure : {
+        'Basic education': 232600,
+        'Higher education & training': 77500,
+        'Health': 187500,
+        'Social grants': 180000,
+        'Employment & labour affairs': 75900,
+        'Trade & industry': 28900,
+        'Economic infrastructure': 89500,
+        'Defence & state security': 54000,
+        'Law courts & prisons': 43800,
+        'Police services': 93800,
+        'Home affairs': 7200,
+        'Local government and housing': 195800,
+        'Agriculture, rural development & land reform': 26500,
+        'Science & Technology and environment': 20600,
+        'Arts, sports, recreation and culture': 10400,
+        'General public services': 70700,
+        'National debt': 162400,
+        'Unallocated reserves': 6000,
+    },
+    vat : 0.15
+}
