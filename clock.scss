@@ -439,7 +439,8 @@ body:hover .embed-link.allowed {
 	right: 0;
 	bottom: 0;
 	padding: 4px;
-	color: $black;
+	color: blue;
+    text-decoration: underline;
 	&:hover {
 		color: $black;
 		text-decoration: none;

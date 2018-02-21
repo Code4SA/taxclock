@@ -6097,7 +6097,8 @@ body:hover .embed-link.allowed {
   right: 0;
   bottom: 0;
   padding: 4px;
-  color: #000; }
+  color: blue;
+  text-decoration: underline; }
   .vulekamali-link:hover {
     color: #000;
     text-decoration: none;
