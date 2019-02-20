@@ -1,7 +1,7 @@
 if (document.location.hostname == "localhost") {
     var baseurl = "";
 } else {
-    var baseurl = "https://static.code4sa.org/taxclock/";
+    var baseurl = "https://www.taxclock.co.za/";
 }
 document.write('<div id="code4sa-embed-taxclock"></div>');
 document.write('<script type="text/javascript" src="' + baseurl + 'pym.js"></script>');
