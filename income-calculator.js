@@ -254,7 +254,7 @@ var taxes_2019 = {
         'Health': 222600,
         'General Public Services': 65300,
         'Community Development': 208500,
-        'debt-service-costs': 202200,
+        'Debt Service Costs': 202200,
         'Social Development': 278400,
     },
     vat : 0.15,
