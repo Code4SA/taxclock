@@ -189,6 +189,7 @@ var taxes_2017 = {
     vat : 0.14
 }
 
+
 var taxes_2018 = {
 // tax bands -- with thanks to http://www.oldmutual.co.za/markets/south-african-budget/income-tax-calculator
     tax_table : [
