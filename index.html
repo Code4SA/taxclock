@@ -7,12 +7,12 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-  <meta property="og:title" content="The 2018 Tax Clock" />
+  <meta property="og:title" content="The 2019 Tax Clock" />
   <meta property="og:description" content="It’s easy to see how much of your salary is taken for taxes, but do you know how many hours are allocated to those deductions? Enter your salary to see how your tax money is being spent." />
   <meta property="og:image" content="https://static.code4sa.org/taxclock/preview.png" />
   <meta property="og:url" content="https://static.code4sa.org/taxclock/index.html?show-embed-link=true" />
 
-  <title>The 2018 Tax Clock - How much time do you spend paying off your tax</title>
+  <title>The 2019 Tax Clock - How much time do you spend paying off your tax</title>
 
 </head>
 
@@ -24,7 +24,7 @@
 
   <div class="jumbotron">
     <div class="container">
-      <h1>2018</h1>
+      <h1>2019</h1>
       <h2>Tax Clock</h2>
       <h3><span class="h3-inner">​How much of your work day is spent paying taxes?​</span></h3>
     </div>
@@ -34,7 +34,7 @@
     <div class="row">
       <div class="col-md-6 col-md-offset-3">
         <div class="fb-share-button" data-href="http://code4sa.org/taxclock" data-layout="button_count"></div> 
-        <a href="https://twitter.com/share" class="twitter-share-button" data-url="http://www.taxclock.co.za" data-via="OpenUpSA" data-hashtags="taxclock2018">Tweet</a>
+        <a href="https://twitter.com/share" class="twitter-share-button" data-url="http://www.taxclock.co.za" data-via="OpenUpSA" data-hashtags="taxclock2019">Tweet</a>
       </div>
     </div>
   </div>
@@ -90,7 +90,7 @@
         <div class="col-md-6 col-md-offset-3">
           <div id="difference-wrapper">
             <div id="difference">
-              <h4 id="did-you-know-wrapper"><span id="did-you-know">Did you know?</span> You are paying <span id="amount-wrapper">R<span id="amount">1240</span> more</span> in taxes than last year. You are also working an additional <span id="amount-wrapper"><span id="tax-minutes-change"></span> minutes(s)</span> for government services than in 2017. In 2018, you start earning for yourself at <span id="amount-wrapper"><span id="personal-time"></span></span>.</h3>
+              <h4 id="did-you-know-wrapper"><span id="did-you-know">Did you know?</span> You are paying <span id="amount-wrapper">R<span id="amount">1240</span> more</span> in taxes than last year. You are also working an additional <span id="amount-wrapper"><span id="tax-minutes-change"></span> minutes(s)</span> for government services than in 2017. In 2019, you start earning for yourself at <span id="amount-wrapper"><span id="personal-time"></span></span>.</h3>
               <h5 id="scroll-down">Scroll down for a detailed breakdown of your day</h5>
             </div>
           </div>
@@ -125,7 +125,7 @@
   <div class="footnotes">
     <div class="container">
       <div class="col-md-6 col-md-offset-3">
-        <h6>This calculator only provides approximations and makes simplifying assumptions. These calculations are based on VAT and personal income tax as per the 2018 budget. The VAT calculation assumes all disposable income is spent on standard rated (15%) items. Secondary and tertiary rebates are not included, nor are other indirect taxes such as customs, sin taxes, fuel levy, etc.</h6>
+        <h6>This calculator only provides approximations and makes simplifying assumptions. These calculations are based on VAT and personal income tax as per the 2019 budget. The VAT calculation assumes all disposable income is spent on standard rated (15%) items. Secondary and tertiary rebates are not included, nor are other indirect taxes such as customs, sin taxes, fuel levy, etc.</h6>
       </div>
     </div>
   </div>
@@ -166,11 +166,11 @@
 
     // Explanations for items
     var itemExplanations = {
-      'debt-service-costs': 'This is the tax revenue allocated to servicing South Africa\'s national debt. It is also, along with post-school education and training, the fastest growing item of expenditure in the 2018 budget.',
+      'debt-service-costs': 'This is the tax revenue allocated to servicing South Africa\'s national debt. It is also, along with post-school education and training, the fastest growing item of expenditure in the 2019 budget.',
       'community-development': 'Community development includes public transport infrastructure and funds for the provision of water, sanitation and electricity.',
       'social-protection': 'This function provides social security and a safety net for low-income South Africans. It also improves social welfare service delivery to vulnerable individuals.',
       'economic-regulation-and-infrastructure': 'This includes water and road infrastructure.',
-      'post-school-education-and-training': 'This includes university subsidies, NSFAS, technical and vocational training, and community education. This along with debt servicing costs is the fastest growing item of expenditure in the 2018 budget.',
+      'post-school-education-and-training': 'This includes university subsidies, NSFAS, technical and vocational training, and community education. This along with debt servicing costs is the fastest growing item of expenditure in the 2019 budget.',
       'social-security-funds': 'This includes subsidies for early childhood development and to employ social workers.',
       'public-administration-and-fiscal-affairs': 'Includes spending on the revitalisation of the Batho Pele programme and the implementation of the Public Service Charter.',
       'industrialisation-and-exports': 'Including economic development and incentive programmes.',
@@ -178,6 +178,7 @@
       'job-creation-and-labour-affairs': 'Expanded Public Works Programme, Community Works Programme and the Jobs Fund.',
       'executive-and-legislative-organs': 'This includes administration and support costs, including staff. It includes spending on government statistics and research.',
       'basic-education': 'This department develops, maintains and supports the South African school education system.',
+      'learning-and-culture': 'This is learning and culture',
       'local-government-and-housing': 'This department works to facilitate the creation of sustainable human settlements and the improvement to household quality of life.',
       'health': 'This department provides leadership and coordination of health services to promote the health of all people in South Africa.',
       'social-grants': 'This department aims to reduce poverty by providing income support to those in need.',
@@ -312,19 +313,19 @@
       checkEmbedLink();
       $('.income').on('change keyup', function() {
         var income = parseFloat($(this).val());
-        var calc = new IncomeCalculator(taxes_2018);
-        var calc_2018 = calc;
-        var calc_2017 = new IncomeCalculator(taxes_2017);
+        var calc = new IncomeCalculator(taxes_2019);
+        var calc_2019 = calc;
+        var calc_2018 = new IncomeCalculator(taxes_2018);
         
         var output = calc.calculateIncomeBreakdown(income);
-        var output_2018 = output;
-        var output_2017 = calc_2017.calculateIncomeBreakdown(income);
+        var output_2019 = output;
+        var output_2018 = calc_2018.calculateIncomeBreakdown(income);
 
-        var tax_change = output_2018.personalTax - output_2017.personalTax;
+        var tax_change = output_2019.personalTax - output_2018.personalTax;
         var formatted_tax_change = tax_change.toFixed().replace(/(\d)(?=(\d{3})+(,|$))/g, '$1,')
-        var minutes_change = output_2018.taxman_minutes - output_2017.taxman_minutes;
+        var minutes_change = output_2019.taxman_minutes - output_2018.taxman_minutes;
 
-        var time = START_OF_DAY.clone().add(output_2018.taxman_minutes, 'm');
+        var time = START_OF_DAY.clone().add(output_2019.taxman_minutes, 'm');
         var finish_time = time.format('h:mm a');
 
         $("#amount").text(formatted_tax_change);
