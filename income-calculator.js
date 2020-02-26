@@ -278,3 +278,35 @@ var taxes_2019 = {
       'Debt-service costs': -1,
     }
 }
+
+var taxes_2020 = {
+// tax bands -- with thanks to http://www.oldmutual.co.za/markets/south-african-budget/income-tax-calculator
+    tax_table : [
+        new TaxBand(0.18, 0, 0, 205900),
+        new TaxBand(0.26, 37062, 205901, 321600),
+        new TaxBand(0.31, 67144, 321601, 445100),
+        new TaxBand(0.36, 105429, 445101, 584200),
+        new TaxBand(0.39, 155505, 584200, 744800),
+        new TaxBand(0.41, 2181390, 744801, 1577300),
+        new TaxBand(0.45, 559464, 1577301)
+    ],
+    primary_rebate : 14958,
+    personal_income_tax_revenue : 546.8 * 100,
+    vat_revenue : 360.6 * 100,
+    expenditure : {
+        'Economic Development' : 211.5 * 100,
+        'Peace and Security' : 217 * 100,
+        'General Public Service' : 70 * 100,
+        'Debt-service costs' : 229.3 * 100,
+        'Learning and Culture' : 396.4 * 100,
+        'Health' : 229.7 * 100,
+        'Community Development' : 212.3 * 100,
+        'Social Development' : 309.5 * 100,
+        
+    },
+    vat : 0.15,
+    ordering : {
+      'Working for yourself': 9999,
+      'Debt-service costs': -1,
+    }
+}
